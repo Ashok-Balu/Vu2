@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>VueJs Demos</title>
+    <script src ="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>    
+  </head>
+  <body>
+    <div id="app">
+      <h3>Applying styles</h3>
+      <hr />
+      <img :src = "imgUrl" />
+      <h3>Vue complete guide</h3>
+      $560 <strike>$1120</strike> 50% Off <br />Offers: Special price
+      <p v-if="inStock">Available</p>
+      <p v-else class='content'>Sold out</p>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          inStock: false,
+          imgUrl:"./Ashok.jpeg"
+        },
+      });
+    </script>
+    <style>
+.content {
+  color: red;
+  font-family: verdana;
+  size: 14px;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+    </style>
+  </body>
+</html>

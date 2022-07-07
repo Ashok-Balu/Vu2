@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>VueJs - Watch Property</title>
+    <script src ="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>    
+  </head>
+  <body>
+    <div id="app">
+      <h3>Watch Property</h3>
+      <hr />
+      <h3>Vue schedule details:</h3>
+      Mode: {{mode}} <br />
+      Location:{{location}}<br /><br />
+      <button @click="mode='VCR'">Change mode</button>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          location: "Mysore",
+          mode: "Classroom",
+        },
+        watch: {
+          mode: function (newVal, old) {
+            console.log("newval", newVal);
+            console.log("oldval", old);
+            var md = this;
+            setTimeout(function () {
+              md.mode = "Classroom";
+            }, 2000);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

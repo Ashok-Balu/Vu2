@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>VueJs - Computed Properties</title>
+    <script src ="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>    
+  </head>
+  <body>
+    <div id="app">
+      <h3>Computed Property</h3>
+      <hr />
+      <br />
+      <button @click="count++">Click</button>
+      <p>{{msg}}</p>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          count: 1,
+        },
+        computed: {
+          msg: function () {
+              console.log("hii");
+            return this.count > 5 ? "Greater than 5" : "Less than 5";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
